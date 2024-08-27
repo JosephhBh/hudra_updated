@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "996608503939",
+    "project_id": "hudra-project",
+    "storage_bucket": "hudra-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:996608503939:android:3a0631cbc6545e93002bb6",
+        "android_client_info": {
+          "package_name": "com.example.hudra_mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "996608503939-vqbtsd2n8d1i3gv8vodrlv0ccnr0du0g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxomasiqoVjVpoT_uBBMwjFBJwkOfKECQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "996608503939-vqbtsd2n8d1i3gv8vodrlv0ccnr0du0g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
