@@ -868,10 +868,14 @@ class _MyCustomCalenderState extends State<MyCustomCalender> {
 
       /// Special case for baoutha
 
-      if (areDatesEqual(date.toString(), baoutha1) ||
-          areDatesEqual(date.toString(), baoutha2) ||
-          areDatesEqual(date.toString(), baoutha3)) {
-        return true;
+      try {
+        if (areDatesEqual(date.toString(), baoutha1) ||
+            areDatesEqual(date.toString(), baoutha2) ||
+            areDatesEqual(date.toString(), baoutha3)) {
+          return true;
+        }
+      } catch (e) {
+        return false;
       }
     }
     return false;

@@ -38,14 +38,29 @@ class _DailyPageState extends State<DailyPage> {
       // if (GetStorageHelper().getChurchName() == "ChaldeanChurch") {
       //   condition = "WHERE isChaldean = '1'";
       // }
-      String condition = "WHERE isSelected = 1 ORDER BY rand() LIMIT 3";
       if (mounted) {
-        await Provider.of<ProviderDaily>(context, listen: false)
-            .loadDailyVerses(condition: condition, isWeb: false);
+        loadVerses();
       }
     });
 
     super.initState();
+  }
+
+  String? _holidayOfToday = null;
+
+  loadVerses() async {
+    try {
+      String condition = "WHERE isSelected = 1 ORDER BY rand() LIMIT 3";
+
+      await Future.delayed(Duration.zero, () async {
+        await Provider.of<ProviderDaily>(context, listen: false)
+            .loadDailyVerses(condition: condition, isWeb: false);
+        _holidayOfToday = Provider.of<ProviderDaily>(context, listen: false)
+            .getHolidayOfToday(context: context, isWeb: false);
+      });
+    } catch (e) {
+      print("loadVerses.ERROR : $e");
+    }
   }
 
   @override
@@ -110,9 +125,9 @@ class _DailyPageState extends State<DailyPage> {
                     SizedBox(
                       height: 40,
                       child: Text(
+                        // "",
                         // 'Monday of the twelfth week in ordinary time.',
-                        Provider.of<ProviderDaily>(context).getHolidayOfToday(
-                                context: context, isWeb: false) ??
+                        _holidayOfToday ??
                             "${AppLocalizations.of(context)!.noHoliday}.",
                         maxLines: 2,
                         style: TextStyle(

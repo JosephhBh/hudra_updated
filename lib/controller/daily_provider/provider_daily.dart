@@ -154,16 +154,20 @@ class ProviderDaily extends ChangeNotifier {
 
   String? getHolidayOfToday(
       {required BuildContext context, required bool isWeb}) {
-    String? result;
-    DateTime date = DateTime.now();
+    try {
+      String? result;
+      DateTime date = DateTime.now();
 
-    HolidayItem? holidayItem =
-        _initHolidaysHome(context: context, date: date, isWeb: isWeb);
-    if (holidayItem != null) {
-      result = holidayItem.holidayName;
+      HolidayItem? holidayItem =
+          _initHolidaysHome(context: context, date: date, isWeb: isWeb);
+      if (holidayItem != null) {
+        result = holidayItem.holidayName;
+      }
+
+      return result;
+    } catch (e) {
+      return null;
     }
-
-    return result;
   }
 
   HolidayItem? _initHolidaysHome(
