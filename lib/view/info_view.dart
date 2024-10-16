@@ -224,8 +224,7 @@ class InfoView extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 8.0),
-                  SvgPicture.asset(
-                      "Assets/info/Christian Aid Program Logo.svg"),
+                  Image.asset("Assets/info/CAP.jpg"),
                   const SizedBox(height: 8.0),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
