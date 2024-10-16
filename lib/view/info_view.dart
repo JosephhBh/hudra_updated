@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hudra/utils/custom_colors.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -223,7 +224,8 @@ class InfoView extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 8.0),
-                  Image.asset("Assets/info/CAPNI.jpeg"),
+                  SvgPicture.asset(
+                      "Assets/info/Christian Aid Program Logo.svg"),
                   const SizedBox(height: 8.0),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -235,9 +237,9 @@ class InfoView extends StatelessWidget {
                       ),
                       InkWell(
                         onTap: () =>
-                            launchUrl(Uri.parse("https://capni-iraq.org/")),
+                            launchUrl(Uri.parse("https://christians-aid.org/")),
                         child: Text(
-                          "https://capni-iraq.org/",
+                          "https://christians-aid.org/",
                           style: textStyleLink,
                           textAlign: TextAlign.center,
                         ),
